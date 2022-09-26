@@ -6,6 +6,7 @@ the following values: 3, 9, 23, 64, 2, 8, 28, 93. */
 
 /*a. Programmatically subtract the value of the first element in the array 
 from the value in the last element of the array */
+    
     let newAge= ages[ages.length-1]- ages[0];
 
     console.log (newAge);
@@ -22,9 +23,10 @@ Print the result to the console.*/
     let sum = 0
     for (let i = 0; i <ages.length; i++ ) {
   
-        average = sum += ages[i]/ages.length;
+       sum += ages[i] // This is adding all the elements within the index
 
     }
+    let average = sum/ages.length; //Once you have the sum of your ements you take the average
       console.log (average);
 
 /* 2.Create an array called names that contains the following values:
@@ -36,26 +38,34 @@ Print the result to the console.*/
 calculate the average number of letters per name. 
 Print the result to the console. */
 
+    let nameSum=0
     for (let i = 0; i < names.length; i++ ) {
   
-     averagePerName= names[i].length;
+      nameSum += names[i].length; // This is adding elements in the array for the length of each element (Number of letters)
   
     }
+    averagePerName= nameSum/names.length; //Once we have the sum we can divide it by the array length to get the average
     console.log(averagePerName);
 
 /* b. Use a loop to iterate through the array again 
 and concatenate all the names together, 
 separated by spaces, and print the result to the console.*/
+  
+    let conName = ''; //set conName to an empty string
     for (let i = 0; i < names.length; i++ ) {
   
-        console.log(names.join(i));
+        conName += names[i]+ ' '; //adding to an empty string and iterating the names of the array + a space each time
  
     }
+     console.log(conName);
+  
+    //names.join(' '); You can also concatanate all the names together using .join()
 
 //3. How do you access the last element of any array?
 
     names = [ "Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"]
-    console.log(names.slice(-1));
+    
+    console.log(names[names.length-1]); //Grabbing the index of the array at length-1 bc first index of an array is 0
 
 //4. How do you access the first element of any array?
 
@@ -63,27 +73,29 @@ separated by spaces, and print the result to the console.*/
 
 /* 5. Create a new array called nameLengths. 
 Write a loop to iterate over the previously created names array and 
-add the length of each name to the nameLengths array.*/
+add the length of each name to the nameLengths array. */
 
-    names = [ "Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"]
-    const nameLengths = [3,5,3,5,4,3]
+    names = [ "Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"];
+    let nameLengths = [];
 
     for (let i = 0; i < names.length; i++ ) {
   
-      console.log (names[i].concat(nameLengths[i]));
+    nameLengths.push(names[i].length); // Adding an element each iteration with the length of each element in names
 
   }
+    console.log(nameLengths);
 
 /* 6. Write a loop to iterate over the nameLengths array and calculate the sum 
 of all the elements in the array. Print the result to the console.*/
 
-    sum = 0
+    sum = 0 // This is the starting sum
     for (let i = 0; i < nameLengths.length; i++ ) {
 
-      allElements = sum += nameLengths[i];
+     sum += nameLengths[i]; // Adding every single element into the starting sum to create 1 number
 
     }   
-    console.log (allElements);
+
+    console.log (sum);
 
 /* 7. Write a function that takes two parameters, word and n, 
 as arguments and returns the word concatenated to itself 
