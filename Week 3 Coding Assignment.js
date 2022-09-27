@@ -26,7 +26,7 @@ Print the result to the console.*/
        sum += ages[i] // This is adding all the elements within the index
 
     }
-    let average = sum/ages.length; //Once you have the sum of your ements you take the average
+    let average = sum/ages.length; //Once you have the sum of your elements you take the average
       console.log (average);
 
 /* 2.Create an array called names that contains the following values:
@@ -103,64 +103,100 @@ n number of times. (i.e. if I pass in ‘Hello’ and 3,
 I would expect the function to return ‘HelloHelloHello’).*/
 
     function mathyWords (word, n){
- 
-      return word.repeat(n)
 
-
+      let string = '' // set to an empty string
+        for (let i=0; i<n; i++ ){
+          string+= word; // Add the parameter (word) to the string variable n times. 
+        }
+      return string;
     }
-    console.log(mathyWords ("Evelyn", 5));
+
+      console.log (mathyWords ("Evelyn", 6));
+    
+
+    //function mathyWords (word, n){
+    //return word.repeat(n)
+    //}
+    //console.log(mathyWords ("Evelyn", 5));
 
 /* 8. Write a function that takes two parameters, 
 firstName and lastName, and returns a full name 
 (the full name should be the first and the last name separated by a space).*/
 
     function fullName (firstName, lastName){
-      console.log (firstName + " " + lastName);
+      return firstName + " " + lastName;
     }
  
-      fullName("Evelyn", "Barrios");
+      console.log (fullName("Evelyn", "Barrios"));
 
 /* 9. Write a function that takes an array of numbers and returns true 
 if the sum of all the numbers in the array is greater than 100.*/
 
     function arrayNumbers(array){
-      let num = 0
-      for (let i = 0; i <array.length; i++ ) {
+      let num = 0 // This is defining my initial variable
+      for (let i = 0; i <array.length; i++ ) { //for loop adds all the numbers in the array
         
-        let addition = num += array[i];
+        num += array[i]; //adding each element in the array to my initial variable
+        }
 
-        if (addition >100){
-          return true
-         } 
+        if (num >100) {  // conditional statment evaluating whether my number is greater than 100
+          return true; // if it is this will be true
+        } else {
+          return false; // if not 100 this will be false
         }
       }
     
-  const arr= [3,2,97,9];
-  console.log (arrayNumbers(arr)) ; // When I add else it automatically converts to false why?
+  const arr= [3,2,7,9]; //example of an array
+  console.log (arrayNumbers(arr)) ; // will print false 
     
 
 /* 10. Write a function that takes an array of numbers and returns the average 
 of all the elements in the array.*/
 
     function averageArray (avArr) {
-      let sumAvg = 0
+      let sumAvg = 0; // This is defining my initial variable to 0
       for (let i = 0; i < avArr.length; i++ ) {
-        sumAvg += avArr[i]/avArr.length;
+        sumAvg += avArr[i]; // add each element in the array to the initial value of my variable
       }
-
+        return sumAvg / avArr.length //Once all elements have been added divided that sum by the avarr array length
     }
-const numArr= [3,5,9,10];
-averageArray (numArr);
-
-console.log (averageArray(numArr)); // Undefined :/
+const numArr= [2,4,8,10];
+console.log (averageArray(numArr)); 
 
 /* 11. Write a function that takes two arrays of numbers and returns true 
 if the average of the elements in the first array is greater than 
 the average of the elements in the second array.*/
 
+    function twoArrays(arr1,arr2){ //create a function titled twoArrays with 2 paramaters arr1, and arr2
+      let average1 = averageArray(arr1); //We are initializing a variable that calls the function averageArray with paramater arr1
+      let average2 = averageArray(arr2); //We are initializing another variable that calls the function averageArray with paramater arr 2 
+
+      if (average1 > average2) { //conditional statement comparing both variables
+      return true;  
+      } else {
+      return false;
+      }
+    }
+
+    const arrayOne= [5,6,9,10]; //example
+    const arrayTwo= [10,15,35]; //
+    console.log (twoArrays(arrayOne, arrayTwo));
+
+
 /* 12. Write a function called willBuyDrink that takes a boolean isHotOutside, 
 and a number moneyInPocket, and returns true if it is hot outside and 
 if moneyInPocket is greater than 10.50.*/
+
+  function willBuyDrink (isHotOutside, moneyInPocket){
+    if (isHotOutside && moneyInPocket > 10.50){ //conditional statement checking isHotoutside and the amount of money in the pocket. 
+      return true;
+    } else {
+      return false;
+    }
+  }
+   console.log (willBuyDrink(true,19.60));
+
+
 
 /* 13. Create a function of your own that solves a problem. 
 In comments, write what the function does and why you created it.*/
@@ -169,5 +205,6 @@ In comments, write what the function does and why you created it.*/
       return length * width 
 
     }
-
     console.log (areaRectangle (8,8)); 
+
+    //This function solves the area of a rectangle by multiplying length * width. 
